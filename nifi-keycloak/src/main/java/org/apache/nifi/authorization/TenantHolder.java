@@ -1,8 +1,5 @@
 package org.apache.nifi.authorization;
 
-import org.apache.nifi.authorization.Group;
-import org.apache.nifi.authorization.User;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
