@@ -26,8 +26,8 @@ public class KeycloakApiClient {
     public KeycloakApiClient(KeycloakConfig config) {
         this.config = config;
 
-        this.keycloak = config.apply(KeycloakBuilder.builder())
-                .resteasyClient(new ResteasyClientBuilder().connectionPoolSize(10).build())
+        this.keycloak = config.keycloakBuilder()
+                .resteasyClient(new ResteasyClientBuilder().connectionPoolSize(2).build())
                 .build();
     }
 

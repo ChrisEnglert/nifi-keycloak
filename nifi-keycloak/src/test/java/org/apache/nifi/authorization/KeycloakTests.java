@@ -1,5 +1,7 @@
 package org.apache.nifi.authorization;
 
+import org.apache.nifi.attribute.expression.language.StandardPropertyValue;
+import org.apache.nifi.parameter.ParameterLookup;
 import org.apache.nifi.util.NiFiProperties;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,6 +11,7 @@ import org.mockito.Mockito;
 import java.util.Properties;
 
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -36,6 +39,7 @@ public class KeycloakTests {
 
     private AuthorizerConfigurationContext getBaseConfiguration() {
         final AuthorizerConfigurationContext configurationContext = mock(AuthorizerConfigurationContext.class);
+        when(configurationContext.getProperty(eq(KeycloakConfig.PROP_SERVER_URL))).thenReturn(new StandardPropertyValue("http://localhost:4000/auth", null, ParameterLookup.EMPTY));
 
         return configurationContext;
     }
