@@ -17,7 +17,7 @@
     <parent>
         <groupId>org.apache.nifi</groupId>
         <artifactId>nifi-keycloak-bundle</artifactId>
-        <version>1.12.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>nifi-keycloak-nar</artifactId>
     <packaging>nar</packaging>
@@ -30,6 +30,7 @@
         <dependency>
             <groupId>org.apache.nifi</groupId>
             <artifactId>nifi-keycloak</artifactId>
-        </dependency>              
+            <version>${parent.version}</version>
+        </dependency>
     </dependencies>
 </project>

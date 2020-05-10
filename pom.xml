@@ -17,20 +17,24 @@
     <parent>
         <groupId>org.apache.nifi</groupId>
         <artifactId>nifi-nar-bundles</artifactId>
-        <version>1.12.0-SNAPSHOT</version>
+        <version>1.11.4</version>
     </parent>
+
     <artifactId>nifi-keycloak-bundle</artifactId>
     <packaging>pom</packaging>
     <description>NiFi: Keycloak Bundle</description>
+    <version>0.0.1-SNAPSHOT</version>
+
     <properties>
-        <jersey.version>2.26</jersey.version>
-        <spring.version>4.3.19.RELEASE</spring.version>
-        <spring.security.version>4.2.13.RELEASE</spring.security.version>
+        <keycloak.version>10.0.0</keycloak.version>
+        <nifi.version>1.11.4</nifi.version>
     </properties>
+
     <modules>
         <module>nifi-keycloak</module>
         <module>nifi-keycloak-nar</module>
     </modules>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
