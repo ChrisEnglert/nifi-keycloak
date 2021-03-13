@@ -17,22 +17,22 @@
     <parent>
         <groupId>org.apache.nifi</groupId>
         <artifactId>nifi-nar-bundles</artifactId>
-        <version>1.11.4</version>
+        <version>1.13.0</version>
     </parent>
 
     <artifactId>nifi-keycloak-bundle</artifactId>
     <packaging>pom</packaging>
     <description>NiFi: Keycloak Bundle</description>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.3</version>
 
     <properties>
-        <keycloak.version>10.0.0</keycloak.version>
-        <nifi.version>1.11.4</nifi.version>
+        <keycloak.version>12.0.4</keycloak.version>
+        <nifi.version>1.13.0</nifi.version>
     </properties>
 
     <modules>
-        <module>nifi-keycloak</module>
-        <module>nifi-keycloak-nar</module>
+        <module>nifi-keycloak-provider</module>
+        <module>nifi-keycloak-client</module>
     </modules>
 
     <dependencyManagement>
@@ -40,8 +40,21 @@
             <dependency>
                 <groupId>org.apache.nifi</groupId>
                 <artifactId>nifi-keycloak</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

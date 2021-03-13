@@ -49,8 +49,8 @@ public class KeycloakApiClient {
 
     private Group map(GroupRepresentation kcGroup) {
 
-        GroupResource groupResource = realm().groups().group(kcGroup.getId());
-        Set<String> users = groupResource.members().stream().map(UserRepresentation::getId).collect(Collectors.toSet());
+        final GroupResource groupResource = realm().groups().group(kcGroup.getId());
+        final Set<String> users = groupResource.members().stream().map(UserRepresentation::getId).collect(Collectors.toSet());
 
         return new Group.Builder()
                 .identifier(kcGroup.getId())

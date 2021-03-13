@@ -17,9 +17,9 @@
     <parent>
         <groupId>org.apache.nifi</groupId>
         <artifactId>nifi-keycloak-bundle</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.3</version>
     </parent>
-    <artifactId>nifi-keycloak-nar</artifactId>
+    <artifactId>nifi-keycloak-provider</artifactId>
     <packaging>nar</packaging>
     <description>NiFi: Keycloak Nar</description>
     <properties>
@@ -29,8 +29,34 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.nifi</groupId>
-            <artifactId>nifi-keycloak</artifactId>
-            <version>${parent.version}</version>
+            <artifactId>nifi-keycloak-client</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-properties</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-framework-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-framework-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-properties</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-expression-language</artifactId>
+            <version>1.13.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

@@ -3,7 +3,6 @@ package org.apache.nifi.authorization;
 import org.apache.nifi.attribute.expression.language.StandardPropertyValue;
 import org.apache.nifi.parameter.ParameterLookup;
 import org.apache.nifi.util.NiFiProperties;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -40,7 +39,12 @@ public class KeycloakTests {
     private AuthorizerConfigurationContext getBaseConfiguration() {
         final AuthorizerConfigurationContext configurationContext = mock(AuthorizerConfigurationContext.class);
         when(configurationContext.getProperty(eq(KeycloakConfig.PROP_SERVER_URL))).thenReturn(new StandardPropertyValue("http://localhost:4000/auth", null, ParameterLookup.EMPTY));
-
+        when(configurationContext.getProperty(eq(KeycloakConfig.PROP_SERVER_URL))).thenReturn(new StandardPropertyValue("http://localhost:4000/auth", null, ParameterLookup.EMPTY));
+        when(configurationContext.getProperty(eq(KeycloakConfig.PROP_REALM))).thenReturn(new StandardPropertyValue("master", null, ParameterLookup.EMPTY));
+        when(configurationContext.getProperty(eq(KeycloakConfig.PROP_CLIENT_ID))).thenReturn(new StandardPropertyValue("admin-cli", null, ParameterLookup.EMPTY));
+        when(configurationContext.getProperty(eq(KeycloakConfig.PROP_CLIENT_SECRET))).thenReturn(new StandardPropertyValue(null, null, ParameterLookup.EMPTY));
+        when(configurationContext.getProperty(eq(KeycloakConfig.PROP_USERNAME))).thenReturn(new StandardPropertyValue("admin", null, ParameterLookup.EMPTY));
+        when(configurationContext.getProperty(eq(KeycloakConfig.PROP_PASSWORD))).thenReturn(new StandardPropertyValue("admin", null, ParameterLookup.EMPTY));
         return configurationContext;
     }
 

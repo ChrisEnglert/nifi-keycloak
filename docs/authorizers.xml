@@ -23,6 +23,7 @@
         <property name="Username"></property>
         <property name="Password"></property>
         <property name="ClientID">admin-cli</property>
+        <property name="ClientSecret">secret</property>
     </userGroupProvider>
 
 </authorizers>

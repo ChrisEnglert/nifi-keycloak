@@ -18,9 +18,9 @@
     <parent>
         <groupId>org.apache.nifi</groupId>
         <artifactId>nifi-keycloak-bundle</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.3</version>
     </parent>
-    <artifactId>nifi-keycloak</artifactId>
+    <artifactId>nifi-keycloak-client</artifactId>
 
     <build>
         <resources>
@@ -38,10 +38,12 @@
         <dependency>
             <groupId>org.apache.nifi</groupId>
             <artifactId>nifi-framework-api</artifactId>
+            <version>${nifi.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.nifi</groupId>
             <artifactId>nifi-properties</artifactId>
+            <version>${nifi.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.nifi</groupId>
@@ -59,6 +61,12 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>testcontainers</artifactId>
             <version>1.11.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-expression-language</artifactId>
+            <version>${nifi.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
